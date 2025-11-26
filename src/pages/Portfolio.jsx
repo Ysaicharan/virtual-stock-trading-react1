@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Portfolio.css";
+import "./portfolio.css";
 
 const Portfolio = ({ updatePortfolio }) => {
   const [ownedStocks, setOwnedStocks] = useState([]);
