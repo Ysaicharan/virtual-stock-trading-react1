@@ -1,0 +1,140 @@
+/* General Market Styling */
+.market-container {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: white;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Stock List Styling */
+.stock-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Stock Card */
+.stock-card {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 160px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.stock-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Stock Logo */
+.stock-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+/* Stock Name */
+.stock-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Stock Price */
+.stock-price {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #2d3436;
+}
+
+/* Balance Info */
+.balance {
+  font-size: 18px;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 15px;
+  background: #ecf0f1;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  transform: scale(1.05);
+}
+
+/* Quantity Input */
+.quantity-input {
+  width: 50px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  border: 2px solid #2980b9;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Pop-up Notification */
+.popup {
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2ecc71;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
