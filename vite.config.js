@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// Detect if we are building for GitHub Pages or Docker
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+
 export default defineConfig({
   plugins: [react()],
-  base: "/virtual-stock-trading-react1/",
+  base: isGitHubPages ? '/virtual-stock-trading-react1/' : '/',
 })
