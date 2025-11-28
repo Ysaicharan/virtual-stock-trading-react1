@@ -24,14 +24,12 @@ jobs:
         run: npm ci
 
       - name: Build the project
+        env:
+          GITHUB_PAGES: "true"
         run: npm run build
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "Ysaicharan"
-          git config --global user.email "2300090051@kluniversity.in"
-
-      - name: Deploy 🚀
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+      - name: Deploy to GitHub Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
