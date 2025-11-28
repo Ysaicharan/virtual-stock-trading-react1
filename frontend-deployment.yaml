@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: virtual-stock-frontend
+  labels:
+    app: virtual-stock-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: virtual-stock-frontend
+  template:
+    metadata:
+      labels:
+        app: virtual-stock-frontend
+    spec:
+      containers:
+        - name: virtual-stock-frontend
+          image: mohanabhishek/react-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
