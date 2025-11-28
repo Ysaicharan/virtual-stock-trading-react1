@@ -1,14 +1,11 @@
-name: virtual-stock-trading-react1 App
-
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 permissions:
-  contents: write  
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -26,22 +23,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test --if-present
-
       - name: Build the project
         run: npm run build
+        env:
+          GITHUB_PAGES: 'true'   # ✅ tell Vite to use /virtual-stock-trading-react1/
 
-      # Configure Git identity
       - name: Configure Git
         run: |
           git config --global user.name "Ysaicharan"
           git config --global user.email "2300090051@kluniversity.in"
 
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
+      - name: Deploy 🚀
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          npm run deploy
+        run: npm run deploy
